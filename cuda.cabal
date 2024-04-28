@@ -144,7 +144,8 @@ Library
   include-dirs:         .
   c-sources:            cbits/stubs.c
                         cbits/init.c
-
+  -- https://github.com/vmchale/libarchive/issues/12
+  cc-options: -D_Alignas(t)=__attribute__((__aligned__(t)))
   build-tools:          c2hs >= 0.21
   build-depends:
       base              >= 4.7 && < 5
